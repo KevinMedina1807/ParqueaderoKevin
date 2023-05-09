@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Administrador</title>
+    <link rel="stylesheet" type="text/css" href="parqueadero.css">
+</head>
+<body>
+<header>
+    <h1>Admnistrador</h1>
+</header>
+<main>
+    <form>
+        <a href="Parqueadero.html" class="custom-btn btn-3">Inicio</a>
+        <a href="Datos.html" class="custom-btn btn-3">Ingresar Vehiculo</a>
+        <label for="placa">Placa:</label>
+        <input type="text" id="placa" name="placa" required>
+
+        <label for="tipo">Tipo:</label>
+        <select id="tipo" name="tipo" required>
+            <option value="carro">Carro</option>
+            <option value="moto">Moto</option>
+        </select>
+
+        <label for="hora_entrada">Hora de entrada:</label>
+        <input type="time" id="hora_entrada" name="hora_entrada" required>
+
+        <label for="fecha_entrada">Fecha de entrada:</label>
+        <input type="date" id="fecha_entrada" name="fecha_entrada" required>
+    </form>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Placa</th>
+            <th>Tipo</th>
+            <th>Hora de entrada</th>
+            <th>Fecha de entrada</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>ABC123</td>
+            <td>Carro</td>
+            <td>08:00</td>
+            <td>2023-04-25</td>
+        </tr>
+        <tr>
+            <td>DEF456</td>
+            <td>Moto</td>
+            <td>09:30</td>
+            <td>2023-04-25</td>
+        </tr>
+        </tbody>
+    </table>
+</main>
+<footer>
+    <p>Gracias por su confianza</p>
+</footer>
+</body>
+</html>
