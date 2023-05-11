@@ -1,4 +1,4 @@
-package com.example.ParqueaderoKevin;
+package main.java.com.example.ParqueaderoKevin;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
