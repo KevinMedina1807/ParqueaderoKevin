@@ -1,38 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Datos</title>
-    <link rel="stylesheet"href="Datos.css">
+    <title>Tabla de parqueadero</title>
+    <link rel="stylesheet" href="Datos.css">
+
 </head>
 <body>
-<table class="rwd-table">
-    <tr>
-        <th>placa</th>
-        <th>fecha de entrada y salida</th>
-        <th>tipo</th>
-        <th>hora</th>
-        <th>mensualidad</th>
-        <th>Valor total</th>
+<h1>Tabla de parqueadero</h1>
 
+<table id="parqueadero-table">
+    <thead>
+    <tr>
+        <th>Placa</th>
+        <th>Fecha de entrada</th>
+        <th>Hora de entrada</th>
+        <th>Tipo de vehiculo</th>
+        <th>Valor total</th>
+        <th>Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>ABC123</td>
+        <td>2023-05-14</td>
+        <td>10:00</td>
+        <td>Automóvil</td>
+        <td>$10.000</td>
+        <td>
+            <button onclick="editarFila(this)">Editar</button>
+            <button onclick="eliminarFila(this)">Eliminar</button>
+        </td>
     </tr>
     <tr>
-        <td data-th="placa">sbf-14g</td>
-        <td data-th="fecha entrada y salida">12/03/2023 a 13/03/2023</td>
-        <td data-th="tipo de vehiculo">moto</td>
-        <td data-th="horas en el parqueadero">5h</td>
-        <td data-th="mensualidad">si</td>
-        <td data-th="valor">50.000</td>
+        <td>XYZ789</td>
+        <td>2023-05-14</td>
+        <td>10:30</td>
+        <td>Motocicleta</td>
+        <td>$5.000</td>
+        <td>
+            <button onclick="editarFila(this)">Editar</button>
+            <button onclick="eliminarFila(this)">Eliminar</button>
+        </td>
     </tr>
-    <tr>
-        <td data-th="placa">hgf-20d</td>
-        <td data-th="fecha entrada y salida">10/03/2023 a 15/03/2023</td>
-        <td data-th="tipo de vehiculo">carro</td>
-        <td data-th="horas en el parqueadero">7h</td>
-        <td data-th="mensualidad">no</td>
-        <td data-th="valor">5.000</td>
-    </tr>
+    </tbody>
 </table>
-<button  onclick="location.href='Parqueadero.html';" class="custom-btn btn">Inicio
+
+<script>
+        function editarFila(button) {
+            var row = button.parentNode.parentNode;
+            var cells = row.getElementsByTagName('td');
+
+            // Obtener los valores de las celdas
+            var placa = cells[0].textContent;
+            var fechaEntrada = cells[1].textContent;
+            var horaEntrada = cells[2].textContent;
+            var tipoVehiculo = cells[3].textContent;
+
+            // Aquí puedes realizar la lógica para editar los datos de la fila
+
+            // Ejemplo de alerta con los valores
+            alert('Editando fila:\nPlaca: ' + placa + '\nFecha de entrada: ' + fechaEntrada + '\nHora de entrada: ' + horaEntrada + '\nTipo de vehiculo: ' + tipoVehiculo);
+        }
+
+        function eliminarFila(button) {
+            var row = button.parentNode.parentNode;
+            row.parentNode.removeChild(row);
+        }
+    </script>
 </body>
 </html>
