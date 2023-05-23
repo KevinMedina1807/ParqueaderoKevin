@@ -5,22 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f500793a-b93a-4a5b-b00d-fa363508ff10" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/SuperbikerVSSupercar.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Administrador.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Administrador.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Administrador.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Administrador.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Datos.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Datos.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Datos.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Datos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Facebook.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Formulario.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Salida.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Salida.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Usuario.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Usuario.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Usuario.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Usuario.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fgygjh.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fondo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/parqueadero.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/parqueadero.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,21 +48,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Código&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Kevin/Programación/ParqueaderoKevin&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Código",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Kevin/Programación/parking KM.rar",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.importing"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="main.resources.templates" />
       <recent name="test.java.com.example.ParqueaderoKevin" />
     </key>
     <key name="CopyFile.RECENT_KEYS">

@@ -3,12 +3,12 @@
 <head>
     <title>Tabla de parqueadero</title>
     <link rel="stylesheet" href="Datos.css">
-
 </head>
 <body>
 <h1>Tabla de parqueadero</h1>
 
-<table id="parqueadero-table">
+<table id="TablaParqueadero">
+    <a href="Parqueadero.html" class="custom-btn btn-3">Inicio</a>
     <thead>
     <tr>
         <th>Placa</th>
@@ -19,7 +19,7 @@
         <th>Acciones</th>
     </tr>
     </thead>
-    <tbody>
+    <tbody id="tablaBody">
     <tr>
         <td>ABC123</td>
         <td>2023-05-14</td>
@@ -45,27 +45,155 @@
     </tbody>
 </table>
 
+<form id="formulario" style="display: none;">
+    <input type="text" id="placa" placeholder="Placa" required>
+    <input type="date" id="fechaEntrada" required>
+    <input type="time" id="horaEntrada" required>
+    <input type="text" id="tipoVehiculo" placeholder="Tipo de vehiculo" required>
+    <input type="number" id="valorTotal" placeholder="Valor total" required>
+    <button onclick="guardarRegistro()">Guardar</button>
+</form>
+
 <script>
-        function editarFila(button) {
-            var row = button.parentNode.parentNode;
+    var registros = [
+        {
+            placa: 'ABC123',
+            fechaEntrada: '2023-05-14',
+            horaEntrada: '10:00',
+            tipoVehiculo: 'Automóvil',
+            valorTotal: 10000
+        },
+        {
+            placa: 'XYZ789',
+            fechaEntrada: '2023-05-14',
+            horaEntrada: '10:30',
+            tipoVehiculo: 'Motocicleta',
+            valorTotal: 5000
+        }
+    ];
+
+    function cargarRegistros() {
+        var tablaBody = document.getElementById('tablaBody');
+        tablaBody.innerHTML = '';
+
+        for (var i = 0; i < registros.length; i++) {
+            var registro = registros[i];
+
+            var fila = document.createElement('tr');
+            fila.innerHTML = `
+                <td>${registro.placa}</td>
+                <td>${registro.fechaEntrada}</td>
+                <td>${registro.horaEntrada}</td>
+                <td>${registro.tipoVehiculo}</td>
+                <td>$${registro.valorTotal}</td>
+                <td>
+                    <button onclick="editarFila(this)">Editar</button>
+                    <button onclick="eliminarFila(this)">Eliminar</button>
+                </td>
+            `;
+
+            tablaBody.appendChild(fila);
+        }
+    }
+
+    function editarFila(button) {
+        var row = button.parentNode.parentNode;
+        var cells = row.getElementsByTagName('td');
+
+        // Obtener los valores de las celdas
+        var placa = cells[0].textContent;
+        var fechaEntrada = cells[1].textContent;
+        var horaEntrada = cells[2].textContent;
+        var tipoVehiculo = cells[3].textContent;
+        var valorTotal = cells[4].textContent.replace('$', '');
+
+        // Mostrar el formulario y completar los campos con los valores
+        var formulario = document.getElementById('formulario');
+        formulario.style.display = 'block';
+        document.getElementById('placa').value = placa;
+        document.getElementById('fechaEntrada').value = fechaEntrada;
+        document.getElementById('horaEntrada').value = horaEntrada;
+        document.getElementById('tipoVehiculo').value = tipoVehiculo;
+        document.getElementById('valorTotal').value = valorTotal;
+
+        // Guardar los índices de la fila y el botón en atributos personalizados
+        formulario.setAttribute('data-row-index', row.rowIndex);
+        formulario.setAttribute('data-button', 'editar');
+    }
+
+    function eliminarFila(button) {
+        var row = button.parentNode.parentNode;
+        row.parentNode.removeChild(row);
+    }
+
+    function guardarRegistro() {
+        var formulario = document.getElementById('formulario');
+        var rowIndex = formulario.getAttribute('data-row-index');
+        var buttonAction = formulario.getAttribute('data-button');
+
+        var placa = document.getElementById('placa').value;
+        var fechaEntrada = document.getElementById('fechaEntrada').value;
+        var horaEntrada = document.getElementById('horaEntrada').value;
+        var tipoVehiculo = document.getElementById('tipoVehiculo').value;
+        var valorTotal = document.getElementById('valorTotal').value;
+
+        if (buttonAction === 'editar') {
+            // Actualizar los valores en el registro correspondiente
+            var registro = registros[rowIndex];
+            registro.placa = placa;
+            registro.fechaEntrada = fechaEntrada;
+            registro.horaEntrada = horaEntrada;
+            registro.tipoVehiculo = tipoVehiculo;
+            registro.valorTotal = valorTotal;
+
+            // Actualizar la fila en la tabla
+            var tablaBody = document.getElementById('tablaBody');
+            var row = tablaBody.rows[rowIndex];
             var cells = row.getElementsByTagName('td');
 
-            // Obtener los valores de las celdas
-            var placa = cells[0].textContent;
-            var fechaEntrada = cells[1].textContent;
-            var horaEntrada = cells[2].textContent;
-            var tipoVehiculo = cells[3].textContent;
+            cells[0].textContent = placa;
+            cells[1].textContent = fechaEntrada;
+            cells[2].textContent = horaEntrada;
+            cells[3].textContent = tipoVehiculo;
+            cells[4].textContent = '$' + valorTotal;
+        } else if (buttonAction === 'agregar') {
+            // Agregar un nuevo registro
+            var nuevoRegistro = {
+                placa: placa,
+                fechaEntrada: fechaEntrada,
+                horaEntrada: horaEntrada,
+                tipoVehiculo: tipoVehiculo,
+                valorTotal: valorTotal
+            };
 
-            // Aquí puedes realizar la lógica para editar los datos de la fila
+            registros.push(nuevoRegistro);
 
-            // Ejemplo de alerta con los valores
-            alert('Editando fila:\nPlaca: ' + placa + '\nFecha de entrada: ' + fechaEntrada + '\nHora de entrada: ' + horaEntrada + '\nTipo de vehiculo: ' + tipoVehiculo);
+            // Agregar una nueva fila a la tabla
+            var tablaBody = document.getElementById('tablaBody');
+            var fila = document.createElement('tr');
+            fila.innerHTML = `
+                <td>${placa}</td>
+                <td>${fechaEntrada}</td>
+                <td>${horaEntrada}</td>
+                <td>${tipoVehiculo}</td>
+                <td>$${valorTotal}</td>
+                <td>
+                    <button onclick="editarFila(this)">Editar</button>
+                    <button onclick="eliminarFila(this)">Eliminar</button>
+                </td>
+            `;
+
+            tablaBody.appendChild(fila);
         }
 
-        function eliminarFila(button) {
-            var row = button.parentNode.parentNode;
-            row.parentNode.removeChild(row);
-        }
-    </script>
+        // Restablecer el formulario
+        formulario.reset();
+        formulario.style.display = 'none';
+    }
+
+    // Cargar los registros al cargar la página
+    cargarRegistros();
+</script>
+
 </body>
 </html>

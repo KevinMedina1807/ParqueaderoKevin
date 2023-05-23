@@ -26,10 +26,20 @@
 
         <label for="fecha_entrada">Fecha de entrada:</label>
         <input type="date" id="fecha_entrada" name="fecha_entrada" required>
+        <script>
+  function guardarDatos() {
+    var placa = document.getElementById('inputPlaca').value;
+    var fechaEntrada = document.getElementById('inputFecha').value;
+    var horaEntrada = document.getElementById('inputHora').value;
+    var tipoVehiculo = document.getElementById('inputTipo').value;
+
+    // Aquí puedes realizar la lógica para guardar los datos en algún lugar, como una base de datos o una estructura de datos en memoria
+
+    // Luego, puedes llamar a una función en la segunda interfaz para actualizar la tabla con los nuevos datos ingresados
+    actualizarTabla(placa, fechaEntrada, horaEntrada, tipoVehiculo);
+  }
+</script>
     </form>
-
-
-
 </main>
 <footer>
     <p>Gracias por su confianza</p>
